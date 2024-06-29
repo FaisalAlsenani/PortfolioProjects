@@ -1,13 +1,8 @@
---select * from PortfolioProject..CovidDeaths$
---order by 3,4
-
---select * from PortfolioProject..CovidVaccinations$
---order by 3,4
 
 -- Select Data that we are oing to be using
---select location,date,total_cases,new_cases,total_deaths,population
---from PortfolioProject..CovidDeaths$
---order by 1,2
+select location,date,total_cases,new_cases,total_deaths,population
+from PortfolioProject..CovidDeaths$
+order by 1,2
 
 -- Looking at Total Cases vs Total Deaths
 -- shows liklihood of dying if you contract covid in your country 
@@ -82,7 +77,7 @@ where dea.continent is not null
 select *, (RollingPeopleVaccinated/population)*100
 from PopvsVac
 
--- Creating a View for 
+-- Creating a View for later visualizations
 
 Create View PercentPopulationVaccinated as 
 select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
